@@ -4,10 +4,10 @@ import random
 import pandas as pd
 import os
 
-from src.simulation_scripts.PE import pe
-from src.simulation_scripts.LE import le
-from src.simulation_scripts.NE import ne
-from src.simulation_scripts.BE import be
+from PE import pe
+from LE import le
+from NE import ne
+from BE import be
 from mutation_assigner import assign
 
 np.random.seed(0)
