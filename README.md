@@ -1,31 +1,15 @@
-# MoTERNN 
-## Classifying the Mode of Tumor Evolution using Recursive Neural Networks
-Tumor evolutionary models have different implications in cancer patients' clinical diagnosis, prognosis, and therapeutic treatment. Four major evolutionary models have been proposed; namely, Linear, Branching, Neutral, and Punctuated models, which are identified from tumor phylogenetic trees. We automated this identification process by defining it as an instance of graph classification problem on phylogenetic trees. Specifically, we employed Recursive Neural Networks to capture the tree structure of tumor phylogenies while predicting the mode of evolution. We trained our model, MoTERNN, using simulated data in a supervised fashion and applied it to a real phylogenetic tree obtained from single-cell DNA-seq data.
-## Table of Contents
+# MoTERNN - optimisations and interpretability: final project for Modeling of Complex Biological Systems 
+## Description
+There are four major evolutionary models that have been proposed in cancer patients. Classifying a tumor into one of these four modes is important for diagnosis and treatment purposes. A paper by Edrisi et al (https://doi.org/10.1101/2022.08.21.504710) introduced a recursive neural network model, called MoTERNN, which predicts the mode of evolution from a reconstructed phylogenetic network of tumor.
 
-[1. Description of the directories](#description-of-the-directories)  
-[2. How to install required packages](#how-to-install-required-packages)  
-[3. Reproducibility](#reproducibility)  
-[4. Contact](#contact)
-
+This repository contains an updated version of the original MoTERNN scripts. The training and evaluation scripts contain computational optimisations that reduce the peak RAM usage from 59.94 GB to 6.64 GB on the simulated training data used by Edrisi et al. The repository also contains additional scripts to evaluate the model and its interpretability.
 ## Description of the directories
 This repository contains the PyTorch implementation of MoTERNN and the scripts used for generating simulated data. Also, we have provided the trained model and the real data that we applied our method on in the study. Specifically we have:
 - `src`: contains all the scripts for training the RNN model and simulating the training data.
 - `data`: contains the real dataset including the phylogenetic tree (in Newick format) and the csv file of the genotypes at the leaves. 
 
 The implementation of Recursive Neural Network in this project was adopted from https://github.com/mae6/pyTorchTree. To reporduce the results presented in the paper, please follow the instructions below in [Reproducibility](https://github.com/NakhlehLab/MoTERNN#reproducibility).
-## How to install required packages
-### Python installation
-To better manage Python packages we used Conda. The latest version of Conda can be installed by following instructions in the website https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html
 
-### PyTorch installation
-Install PyTorch according to the OS and CUDA version. You can find the Conda command for PyTorch and Cuda Toolkit installation from PyTorch's official website https://pytorch.org/get-started/locally/
-
-### ETE Toolkit installation
-We used [ETE Toolkit](http://etetoolkit.org) for handling tree objects. It can be installed using the following command for Conda:
-```
-conda install -c etetoolkit ete3
-```
 ## Reproducibility
   1. ### Simulation of the training data
      Download this package, unzip it, and navigate to the main directory named `src`. To make sure `generator.py` works and see the arguments, run:
@@ -108,5 +92,3 @@ conda install -c etetoolkit ete3
       parsing all data took 0.016454696655273438 seconds
       prediction on real tree: Punctuated mode
       ```
-## Contact
-If you have any questions, please contact edrisi@rice.edu or edrisi.rice@gmail.com
