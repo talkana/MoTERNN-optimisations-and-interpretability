@@ -1,6 +1,6 @@
 # MoTERNN - optimisations and interpretability: final project for Modeling of Complex Biological Systems 
 ## Description
-There are four major evolutionary models that have been proposed in cancer patients. Classifying a tumor into one of these four modes is important for diagnosis and treatment purposes. A paper by Edrisi et al (https://doi.org/10.1101/2022.08.21.504710) introduced a recursive neural network model, called MoTERNN, which predicts the mode of evolution from a reconstructed phylogenetic network of tumor.
+There are four major evolutionary modes that have been proposed in cancer patients. Classifying a tumor into one of these four modes is important for diagnosis and treatment purposes. A paper by Edrisi et al (https://doi.org/10.1101/2022.08.21.504710) introduced a recursive neural network model, called MoTERNN, which predicts the mode of evolution from a reconstructed phylogenetic network of tumor.
 
 This repository contains an updated version of the original MoTERNN scripts. The training and evaluation scripts contain computational optimisations that reduce the peak RAM usage from 59.94 GB to 6.64 GB on the simulated training data used by Edrisi et al. The repository also contains additional scripts to evaluate the model and its interpretability.
 ## Description of the directories
